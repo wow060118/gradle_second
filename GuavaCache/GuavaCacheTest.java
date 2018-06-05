@@ -1,5 +1,6 @@
 package com.example.gradle.gradle_second.GuavaCache;
 
+import com.example.gradle.gradle_second.Singleton;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import org.springframework.stereotype.Service;
@@ -28,5 +29,13 @@ public class GuavaCacheTest {
         });
         System.out.println(hello);
         return hello;
+    }
+
+    public static void main(String[] args) {
+        Singleton singleton =Singleton.getInstance();
+        String s1 = singleton.getCache("asd", "123");
+        System.out.println(s1);
+        String s2 = singleton.getCache("asd", "123");
+        System.out.println(s2);
     }
 }
